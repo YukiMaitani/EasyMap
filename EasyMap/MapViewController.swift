@@ -28,8 +28,8 @@ class MapViewController:UIViewController{
 extension MapViewController:CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations.last
-        let latitude = location?.coordinate.latitude
-        let longtitude = location?.coordinate.longitude
-        print("緯度:\(latitude!)経度:\(latitude!)")
+        if let latitude = location?.coordinate.latitude,let longtitude = location?.coordinate.longitude{
+            print("緯度:\(latitude)経度:\(longtitude)")
+        }
     }
 }
